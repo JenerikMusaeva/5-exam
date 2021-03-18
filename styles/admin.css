@@ -23,7 +23,6 @@ header {
 }
 
 .menu-icon {
-  content: "";
   width: 22px;
   height: 22px;
   background-image: url(../images/menu_icon.svg);
@@ -60,7 +59,7 @@ h3 {
 /* menu  */
 #menu {
   display: block;
-  padding: 29px 62px;
+  padding: 29px 29px 29px 62px;
   position: fixed;
   left: -316px;
   top: 0;
@@ -78,7 +77,6 @@ h3 {
 }
 
 .menu-close-icon {
-  content: "";
   width: 30px;
   height: 30px;
   background-image: url(../images/menu-close-icon.svg);
@@ -87,6 +85,7 @@ h3 {
 }
 
 .contact {
+  margin-top: 50px;
   margin-bottom: 76px;
 }
 
@@ -115,12 +114,16 @@ h3 {
 
 .instock {
   display: flex;
+  justify-content: space-around;
+}
+
+.instock-quantity {
+  width: 100px;
+  display: flex;
   justify-content: space-between;
-  align-content: center;
 }
 
 .icon-decrease {
-  content: "";
   width: 18px;
   height: 18px;
   background-image: url(../images/icon_minus.svg);
@@ -129,7 +132,6 @@ h3 {
 }
 
 .icon-increase {
-  content: "";
   width: 18px;
   height: 18px;
   background-image: url(../images/icon_plus.svg);
@@ -138,7 +140,6 @@ h3 {
 }
 
 .delete-icon {
-  content: "";
   width: 24px;
   height: 24px;
   background-image: url(../images/icon_delete.svg);
@@ -147,7 +148,6 @@ h3 {
 }
 
 .edit-icon {
-  content: "";
   width: 18px;
   height: 18px;
   background-image: url(../images/icon_edit.svg);
@@ -157,7 +157,6 @@ h3 {
 }
 
 .done-icon {
-  content: "";
   width: 24px;
   height: 24px;
   background-image: url(../images/done_icon.svg);
@@ -182,6 +181,7 @@ h3 {
   width: auto;
   border: 1px solid #8e4575;
   border-radius: 0;
+  margin-right: 5px;
 }
 
 .sweetcost-field .form-control {

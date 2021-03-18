@@ -58,9 +58,11 @@ const renderSweetElement = (sweet) => {
 
   <div class="instock col-md-4">
     in stock: 
+    <div class="instock-quantity">
     <span class="decrease"></span>
       ${sweet.inStock}
     <span class="increase"></span>
+    </div>
   </div>
   <div class="col-md-1 remove">
   </div>
