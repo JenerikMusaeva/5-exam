@@ -164,7 +164,7 @@ $addSweetForm.addEventListener("submit", async function (e) {
     '[name="sweet_ingredients"]'
   ).value;
   let sweetCost = $addSweetForm.querySelector('[name="sweet_cost"]').value;
-  
+
   //получение правильного массива ингридиентов
   let ingredients = sweetIngredients
     .replace(/,/g, " ")

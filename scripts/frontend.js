@@ -4,12 +4,6 @@ let $sweets = document.querySelector("#sweets");
 let $cart = document.querySelector("#cart");
 let $menu = document.querySelector("#menu");
 
-//открытие корзины
-let $openCartBtn = document.querySelector(".header__cart");
-$openCartBtn.addEventListener("click", () => {
-  $cart.style.right = "0";
-});
-
 //открытие меню
 let $openMenuBtn = document.querySelector(".menu-icon");
 $openMenuBtn.addEventListener("click", () => {
@@ -20,6 +14,12 @@ $openMenuBtn.addEventListener("click", () => {
 let $closeMenuBtn = document.querySelector(".menu-close-icon");
 $closeMenuBtn.addEventListener("click", () => {
   $menu.style.left = "-316px";
+});
+
+//открытие корзины
+let $openCartBtn = document.querySelector(".header__cart");
+$openCartBtn.addEventListener("click", () => {
+  $cart.style.right = "0";
 });
 
 //удаление с корзины
@@ -130,7 +130,7 @@ const renderSweetElement = (sweet) => {
   // $html.classList.add("col-md-4");
 
   $html.innerHTML = `
-  <div class="sweet__img"><img src="${sweet.image}" alt="${sweet.name}"></div>
+  <div class="sweet__img"></div>
   <h3>${sweet.name}</h3>
   <p class="sweet__ingredients">${sweet.ingredients.join(", ")}</p>
   <p class="sweet__price">$${sweet.cost}</p>
@@ -150,6 +150,18 @@ const renderSweetElement = (sweet) => {
     addToCart(sweet);
   });
 
+  // создание изображения и добавление класса изображениям//////////////
+  let $img = document.createElement("img");
+  $img.setAttribute("src", `${sweet.image}`);
+  let width = $img.width;
+  let height = $img.height;
+  const imageClass = width < height ? "img_vertical" : "img_horizont";
+  $img.classList.add(imageClass);
+
+  $html.querySelector(".sweet__img").append($img);
+
+  //////////////////////////////////////
+
   $html.append($addToCartBtn);
 
   return $html;
@@ -158,21 +170,10 @@ const renderSweetElement = (sweet) => {
 const renderSweets = (sweets) => {
   sweets.forEach((sweet) => {
     let $sweetDiv = renderSweetElement(sweet);
-
     $sweets.append($sweetDiv);
   });
 };
-
 let sweets = await getSweets();
 
 renderSweets(sweets);
 
-let $images = document.querySelectorAll("img");
-$images.forEach(($image) => {
-  let width = $image.width;
-  let height = $image.height;
-  const imageClass = width < height ? "img_vertical" : "img_horizont";
-
-  $image.classList.add(imageClass);
-
-});
