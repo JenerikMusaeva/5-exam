@@ -2,6 +2,7 @@ import { getSweets } from "./helper.js";
 
 let $sweets = document.querySelector("#sweets");
 let $cart = document.querySelector("#cart");
+let $cartItemsDiv = document.querySelector(".cart-items");
 let $menu = document.querySelector("#menu");
 
 //открытие меню
@@ -22,6 +23,12 @@ $openCartBtn.addEventListener("click", () => {
   $cart.style.right = "0";
 });
 
+//закрытие корзины
+let $closeCartBtn = document.querySelector(".close-icon");
+$closeCartBtn.addEventListener("click", () => {
+  $cart.style.right = "-316px";
+});
+
 //удаление с корзины
 const removeFromCart = (id) => {
   cart = cart.filter((item) => {
@@ -33,7 +40,7 @@ const removeFromCart = (id) => {
 
 // отображение содержимого корзины
 const renderCart = () => {
-  $cart.innerHTML = "";
+  $cartItemsDiv.innerHTML = "";
   cart.forEach(({ id, name, cost, quantity }) => {
     let $cartDiv = document.createElement("div");
     $cartDiv.className = "cart__item row";
@@ -58,27 +65,14 @@ const renderCart = () => {
     });
 
     $cartDiv.querySelector(".cart__remove").append($removeFromCartBtn);
-    $cart.append($cartDiv);
-  });
-
-  //кнопка закрытия корзины
-  $cart.insertAdjacentHTML(
-    "afterbegin",
-    `
-      <div class=close_cart><i type="button" class="close-icon"></i></div>
-      `
-  );
-
-  let $closeCartBtn = $cart.querySelector(".close-icon");
-  $closeCartBtn.addEventListener("click", () => {
-    $cart.style.right = "-316px";
+    $cartItemsDiv.append($cartDiv);
   });
 
   //Total Price
   let totalPrice = cart.reduce((acc, item) => {
     return acc + item.cost * item.quantity;
   }, 0);
-  $cart.insertAdjacentHTML(
+  $cartItemsDiv.insertAdjacentHTML(
     "beforeend",
     `
     <hr>
@@ -150,7 +144,7 @@ const renderSweetElement = (sweet) => {
     addToCart(sweet);
   });
 
-  // создание изображения и добавление класса изображениям//////////////
+  // создание изображения и добавление класса изображениям
   let $img = document.createElement("img");
   $img.setAttribute("src", `${sweet.image}`);
   let width = $img.width;
@@ -159,8 +153,6 @@ const renderSweetElement = (sweet) => {
   $img.classList.add(imageClass);
 
   $html.querySelector(".sweet__img").append($img);
-
-  //////////////////////////////////////
 
   $html.append($addToCartBtn);
 
@@ -176,4 +168,3 @@ const renderSweets = (sweets) => {
 let sweets = await getSweets();
 
 renderSweets(sweets);
-

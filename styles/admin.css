@@ -165,28 +165,15 @@ h3 {
   display: inline-block;
 }
 
-.sweetname-field {
-  position: relative;
-  display: flex;
-}
-
-.sweetname-field form {
-  display: none;
-}
-
-.form-control {
-  width: auto;
-  border: 1px solid #8e4575;
-  border-radius: 0;
-}
-
 /* -------------- */
 
+.sweetname-field,
 .sweetcost-field {
   position: relative;
   display: flex;
 }
 
+.sweetname-field form,
 .sweetcost-field form {
   display: none;
 }
@@ -197,11 +184,20 @@ h3 {
   border-radius: 0;
 }
 
+.sweetcost-field .form-control {
+  width: 100px;
+}
+
 .editing form {
   display: flex;
 }
 
 .editing .edit-name,
+.editing h3 {
+  display: none;
+}
+
+.editing .edit-cost,
 .editing h3 {
   display: none;
 }

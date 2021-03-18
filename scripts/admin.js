@@ -48,7 +48,7 @@ const renderSweetElement = (sweet) => {
   </div>
 
   <div class="sweetcost-field col-md-3">
-    price: $ <span>${sweet.cost}</span>
+    <h3>price: $ <span>${sweet.cost}</span></h3>
     <i type='button' class='edit-cost edit-icon'></i>
     <form>
       <input type='text' name='sweetcost' class='sweetcost form-control' />
@@ -72,7 +72,6 @@ const renderSweetElement = (sweet) => {
     $html.querySelector(".sweetname").value = $html.querySelector(
       "h3"
     ).innerText;
-
     const field = $html.querySelector(".sweetname-field");
     field.classList.add("editing");
   });
@@ -91,10 +90,9 @@ const renderSweetElement = (sweet) => {
   // кнопка вызов поля редактирования ЦЕНЫ сладости
   let $editCostBtn = $html.querySelector(".edit-cost");
   $editCostBtn.addEventListener("click", (e) => {
-    field.querySelector(".sweetcost").value = $html.querySelector(
+    $html.querySelector(".sweetcost").value = $html.querySelector(
       "span"
     ).innerText;
-
     const field = $html.querySelector(".sweetcost-field");
     field.classList.add("editing");
   });
