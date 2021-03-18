@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* header */
+header {
+  width: 100%;
+  height: 101px;
+  background: #8e4575;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 105px;
+}
+
+.header__content {
+  margin: 0 auto;
+  width: 1156px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-icon {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-image: url(../images/menu_icon.svg);
+  background-size: cover;
+  display: inline-block;
+}
+
+.header__logo {
+  width: 205px;
+  height: 54px;
+  background: url(../images/logo_sweet_bakery.svg) no-repeat center;
+  display: block;
+}
+
+.header__cart {
+  width: 60px;
+  display: flex;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+  justify-items: center;
+}
+
+.header__cart {
+  cursor: pointer;
+  color: #fff;
+}
+
+.cart_icon {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-image: url(../images/bag_icon.svg);
+  background-size: cover;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* menu  */
+#menu {
+  display: block;
+  padding: 29px 62px;
+  position: fixed;
+  left: -316px;
+  top: 0;
+  height: 100vh;
+  background: #ffffff;
+  width: 316px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.5s ease-out 0.1s;
+}
+
+.close_menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-close-icon {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/menu-close-icon.svg);
+  background-size: cover;
+  display: inline-block;
+}
+
+.contact {
+  margin-bottom: 76px;
+}
+
+.contact h3 {
+  font-weight: normal;
+}
+
+.tel {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+.admin-text {
+  text-align: center;
+  margin-top: 300px;
+}
+
+/* корзина */
+#cart {
+  display: block;
+  padding: 35px;
+  position: fixed;
+  right: -316px;
+  top: 0;
+  height: 100vh;
+  background: #8e4575;
+  width: 316px;
+  color: #fff;
+  overflow-y: scroll;
+  box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.5s ease-out 0.1s;
+}
+
+.close-icon {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/icon_close.svg);
+  background-size: cover;
+  display: inline-block;
+}
+
+.cart__item {
+  margin-top: 30px;
+}
+
+.cart__item p {
+  margin-bottom: 3px;
+}
+
+.delete-icon {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/icon-delete-cart.svg);
+  background-size: cover;
+  display: inline-block;
+}
+
+/* каталог */
+
+.container {
+  width: 875px;
+}
+
+#sweets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sweet {
+  width: 257px;
+  background-color: #f7f8fc;
+  padding: 13px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 28px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+h3 {
+  margin-top: 11px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.sweet p {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.sweet__price {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.sweet__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  height: 230px;
+  overflow: hidden;
+}
+
+.img_vertical {
+  max-width: 100%;
+}
+
+.img_horizont {
+  max-height: 100%;
+}
+
+/* img {
+  max-height: 100%;
+} */
+
+.sweet__btn_add {
+  width: 100%;
+  height: 30px;
+  background-color: #8e4575;
+  color: #fff;
+  border: 0;
+  outline: none;
+}
+
+[disabled="disabled"] {
+  background: #919294;
+}
+
+/* footer */
+footer {
+  height: 250px;
+  background: #43333e;
+  margin-top: 125px;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.footer__logo {
+  font-size: 28px;
+  line-height: 32px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer__tel {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer__logo:hover {
+  color: #8e4575;
+}
+
+.footer__tel:hover {
+  color: #8e4575;
+}
+
+.copyright {
+  font-size: 16px;
+  line-height: 18px;
+  color: #919294;
+}
+
+@media (min-width: 0) and (max-width: 576px) {
+  .container {
+    width: 100%;
+  }
+
+  #sweets {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .sweet {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+  .sweet__img {
+    width: 290px;
+    height: 290px;
+  }
+
+  img {
+    width: 100%;
+  }
+}

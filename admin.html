@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/admin.css" />
+  </head>
+  <body>
+
+    <header>
+      <div class="header__content">
+        <div class="menu"></div>
+        <a class="header__logo"></a>
+        <p class="admin-text">admin page</p>
+      </div>
+    </header>
+
+    <div id="menu"></div>
+
+    <section>
+      <div class="container">
+        <h1>Avaliable sweets</h1>
+        <div id="sweets"></div>
+        <button
+          type="button"
+          class="add-sweet"
+          id="add-sweet"
+          data-bs-toggle="modal"
+          data-bs-target="#add-sweet-modal"
+        >
+          Add new shop item
+        </button>
+      </div>
+    </section>
+
+    <!-- <footer>
+      <a class="footer__logo" href="#">SWEET BAKERY inc</a>
+      <a class="footer__tel" href="tel:+11478344778999">+11 4783 4477 8999</a>
+      <address>UK Privet  Drive 4, 226 788-11</address>
+      <div class="copyright">© Sweet Bakery 2021</div>
+    </footer> -->
+
+    <div
+      class="modal fade"
+      id="add-sweet-modal"
+      tabindex="-1"
+      data-bs-
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Create new item in shop
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="add-sweet-form">
+              <input
+                type="text"
+                placeholder="Name"
+                name="sweetname"
+                class="form-control"
+              />
+              <input
+                type="text"
+                placeholder="Image URL"
+                name="sweet_image"
+                class="form-control"
+              />
+              <input
+                type="text"
+                placeholder="Ingredients"
+                name="sweet_ingredients"
+                class="form-control"
+              />
+              <input
+                type="text"
+                placeholder="In stock"
+                name="instock"
+                class="form-control"
+              />
+              <input
+                type="text"
+                placeholder="Cost"
+                name="sweet_cost"
+                class="form-control"
+              />
+              <button class="add-sweet" type="submit">Add sweet</button>
+              <!-- <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module" src="./scripts/admin.js"></script>
+  </body>
+</html>
