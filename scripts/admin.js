@@ -1,6 +1,19 @@
 import { getSweets, updateSweet, deleteSweet, postSweet } from "./helper.js";
 
 let $sweets = document.querySelector("#sweets");
+let $menu = document.querySelector("#menu");
+
+//открытие меню
+let $openMenuBtn = document.querySelector(".menu-icon");
+$openMenuBtn.addEventListener("click", () => {
+  $menu.style.left = "0";
+});
+
+// //закрытие меню
+let $closeMenuBtn = document.querySelector(".menu-close-icon");
+$closeMenuBtn.addEventListener("click", () => {
+  $menu.style.left = "-316px";
+});
 
 // уменьшение кол-ва сладостей
 const decreaseStock = async (id, currentStock) => {
@@ -151,7 +164,8 @@ $addSweetForm.addEventListener("submit", async function (e) {
     '[name="sweet_ingredients"]'
   ).value;
   let sweetCost = $addSweetForm.querySelector('[name="sweet_cost"]').value;
-  console.log(sweetIngredients);
+  
+  //получение правильного массива ингридиентов
   let ingredients = sweetIngredients
     .replace(/,/g, " ")
     .split(" ")

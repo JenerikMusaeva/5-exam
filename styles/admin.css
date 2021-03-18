@@ -22,13 +22,14 @@ header {
   align-items: center;
 }
 
-.menu {
+.menu-icon {
   content: "";
   width: 22px;
   height: 22px;
   background-image: url(../images/menu_icon.svg);
   background-size: cover;
   display: inline-block;
+  cursor: pointer;
 }
 
 .header__logo {
@@ -38,7 +39,7 @@ header {
   display: block;
 }
 
-.admin-text {
+.header-admin-text {
   font-weight: bold;
   font-size: 18px;
   line-height: 21px;
@@ -56,17 +57,55 @@ h3 {
   text-align: center;
 }
 
+/* menu  */
 #menu {
-  padding: 35px;
-  display: none;
+  display: block;
+  padding: 29px 62px;
   position: fixed;
-  left: 0;
+  left: -316px;
   top: 0;
   height: 100vh;
-  background: #fff;
+  background: #ffffff;
   width: 316px;
-  box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.5s ease-out 0.1s;
+  z-index: 10;
 }
+
+.close_menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-close-icon {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/menu-close-icon.svg);
+  background-size: cover;
+  display: inline-block;
+}
+
+.contact {
+  margin-bottom: 76px;
+}
+
+.contact h3 {
+  font-weight: normal;
+}
+
+.tel {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.admin-text {
+  text-align: center;
+  margin-top: 300px;
+}
+
+/* table sweets */
 
 .sweet {
   align-items: center;
@@ -191,4 +230,45 @@ h3 {
 .modal .form-control {
   width: 100%;
   margin-bottom: 20px;
+}
+
+/* footer */
+footer {
+  height: 250px;
+  background: #43333e;
+  margin-top: 125px;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.footer__logo {
+  font-size: 28px;
+  line-height: 32px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer__tel {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer__logo:hover {
+  color: #8e4575;
+}
+
+.footer__tel:hover {
+  color: #8e4575;
+}
+
+.copyright {
+  font-size: 16px;
+  line-height: 18px;
+  color: #919294;
 }
