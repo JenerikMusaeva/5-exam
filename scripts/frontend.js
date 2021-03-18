@@ -95,6 +95,7 @@ const renderCart = () => {
   $cartItemsQuantity.innerHTML = `${itemsQuantity}`;
 };
 
+// local store для корзины
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 if (cart.length) {
   renderCart();
